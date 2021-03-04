@@ -7,6 +7,7 @@ import {StyleSheet, View} from 'react-native';
 import {Colors} from '@src/assets';
 import {HomeScreen} from '@src/screens';
 import i18n from '@src/localization';
+import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -21,7 +22,7 @@ const MainTab = () => (
       },
     }}>
     <Tab.Screen
-      name="HOME"
+      name="HomeStack"
       options={{
         title: i18n.t('navigation.home'),
         unmountOnBlur: true,
@@ -38,7 +39,7 @@ const MainTab = () => (
             <MaterialIcons color={color} name="home" style={styles.icon} />
           ),
       }}
-      component={HomeScreen}
+      component={HomeStack}
     />
     <Tab.Screen
       name="HISTORY"
