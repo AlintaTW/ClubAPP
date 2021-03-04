@@ -1,10 +1,10 @@
 import React, {memo} from 'react';
-import {StyleSheet} from 'react-native';
-import {View} from 'react-native-ui-lib';
+import {StyleSheet, ScrollView} from 'react-native';
 
 import {Container} from '@src/screens/components';
 import {Colors} from '@src/assets';
 import Carousel from './components/Carousel';
+import ScrollableButtonsBar from './components/ScrollableButtonsBar';
 import {headerDats} from '@src/untils/dummyData';
 
 interface Props {}
@@ -15,9 +15,10 @@ const Home = () => {
       backgroundColor={Colors.orangeCarrot}
       barStyle="light-content"
       backgroundBody={Colors.yellowHalfDutchWhite}>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Carousel data={headerDats} />
-      </View>
+        <ScrollableButtonsBar />
+      </ScrollView>
     </Container>
   );
 };
