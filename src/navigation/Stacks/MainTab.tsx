@@ -6,6 +6,7 @@ import {StyleSheet, View} from 'react-native';
 
 import {Colors} from '@src/assets';
 import {HomeScreen} from '@src/screens';
+import i18n from '@src/localization';
 
 const Tab = createBottomTabNavigator();
 
@@ -22,7 +23,7 @@ const MainTab = () => (
     <Tab.Screen
       name="HOME"
       options={{
-        title: 'Home',
+        title: i18n.t('navigation.home'),
         unmountOnBlur: true,
         tabBarIcon: ({color}) =>
           color === Colors.readAlizarin ? (
@@ -42,7 +43,7 @@ const MainTab = () => (
     <Tab.Screen
       name="HISTORY"
       options={{
-        title: 'History',
+        title: i18n.t('navigation.history'),
         unmountOnBlur: true,
         tabBarIcon: ({color}) =>
           color === Colors.readAlizarin ? (
@@ -62,7 +63,7 @@ const MainTab = () => (
     <Tab.Screen
       name="FAVORITE"
       options={{
-        title: 'Favorite',
+        title: i18n.t('navigation.favorite'),
         unmountOnBlur: true,
         tabBarIcon: ({color}) =>
           color === Colors.readAlizarin ? (
@@ -82,7 +83,7 @@ const MainTab = () => (
     <Tab.Screen
       name="NOTIFICATIONS"
       options={{
-        title: 'Notification',
+        title: i18n.t('navigation.notification'),
         unmountOnBlur: true,
         tabBarIcon: ({color}) =>
           color === Colors.readAlizarin ? (
@@ -106,7 +107,7 @@ const MainTab = () => (
     <Tab.Screen
       name="PROFILE"
       options={{
-        title: 'Profile',
+        title: i18n.t('navigation.profile'),
         unmountOnBlur: true,
         tabBarIcon: ({color}) =>
           color === Colors.readAlizarin ? (

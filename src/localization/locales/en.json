@@ -1,0 +1,9 @@
+{
+  "navigation": {
+    "home": "Home",
+    "history": "History",
+    "favorite": "Favorite",
+    "notification": "Notification",
+    "profile": "Profile"
+  }
+}

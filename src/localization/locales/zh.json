@@ -1,0 +1,9 @@
+{
+  "navigation": {
+    "home": "ZH Home",
+    "history": "ZH History",
+    "favorite": "ZH Favorite",
+    "notification": "ZH Notification",
+    "profile": "ZH Profile"
+  }
+}
