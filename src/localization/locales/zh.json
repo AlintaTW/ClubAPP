@@ -1,9 +1,15 @@
 {
   "navigation": {
-    "home": "ZH Home",
-    "history": "ZH History",
-    "favorite": "ZH Favorite",
-    "notification": "ZH Notification",
-    "profile": "ZH Profile"
+    "home": "首頁",
+    "history": "學習紀錄",
+    "favorite": "我的最愛",
+    "notification": "訊息通知",
+    "profile": "我的專區"
+  },
+  "home": {
+    "point": "學習點數",
+    "accumulation": "開始累積學習點數，兌換精美禮物",
+    "accumulate_more": "再{{value}}點就可以兌換精美禮物",
+    "reached_points": "學習點數已足夠，去兌換禮品"
   }
 }

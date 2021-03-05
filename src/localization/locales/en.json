@@ -5,5 +5,11 @@
     "favorite": "Favorite",
     "notification": "Notification",
     "profile": "Profile"
+  },
+  "home": {
+    "point": "Point",
+    "accumulation": "Start accumulating learning points and redeem exquisite gifts",
+    "accumulate_more": "You can redeem delicate gifts when you reach the remaining {{value}} points",
+    "reached_points": "Enough learning points, redeem gifts"
   }
 }
