@@ -2,6 +2,12 @@ export const images = {
   dummy: {
     header: require('./images/headerImage.png'),
   },
+  common: {
+    errorLayout: require('./images/errorLayout.png'),
+    arrowLeft: require('./images/imageLeft.png'),
+    arrowRight: require('./images/imageRight.png'),
+    eventDefault: require('./images/eventImage.png'),
+  },
 };
 
 export const icons = {
