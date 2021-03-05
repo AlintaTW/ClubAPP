@@ -5,9 +5,10 @@ import {Container} from '@src/screens/components';
 import {Colors} from '@src/assets';
 import Carousel from './components/Carousel';
 import ScrollableButtonsBar from './components/ScrollableButtonsBar';
-import {event, headerDats} from '@src/untils/dummyData';
+import PointProgress from './components/PointProgress';
 import UpComingEvent from './components/UpComingEvent';
 import NoRegister from './components/NoRegister';
+import {event, headerDatas, capData} from '@src/untils/dummyData';
 
 interface Props {}
 
@@ -22,8 +23,12 @@ const Home = () => {
       barStyle="light-content"
       backgroundBody={Colors.yellowHalfDutchWhite}>
       <ScrollView style={styles.container}>
-        <Carousel data={headerDats} />
+        <Carousel data={headerDatas} />
         <ScrollableButtonsBar />
+        <PointProgress
+          points={capData.points}
+          limitPoints={capData.limitPoints}
+        />
         <UpComingEvent item={event[0]} onDialog={onDialog} />
         <NoRegister isVisiable={isVisiable} onDialog={onDialog} />
       </ScrollView>

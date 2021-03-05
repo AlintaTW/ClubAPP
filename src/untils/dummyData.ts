@@ -1,6 +1,6 @@
 import {Images, Icons} from '@src/assets';
 
-export const headerDats = [
+export const headerDatas = [
   {
     id: '1',
     title: '近距離 美語互動',
@@ -80,6 +80,72 @@ export const buttonsBarDatas = [
     name: '新手上路',
   },
 ];
+
+export const capData = {
+  memberNo: 'S020855 ',
+  memberName: '鄭如晶',
+  points: 60,
+  limitPoints: 100,
+  children: [
+    {
+      childNo: 1,
+      name: '林爰希 Lucy',
+      birthday: '2012/06/24',
+      photoUrl: '',
+      capFinishedOfThisMonth: 0,
+      capRest: 0,
+      graduated: true,
+      c01: [
+        {
+          itemFinishedByPercent: 15,
+          subItemFInished: '0/241',
+          totalItem: 13,
+          totallSubItem: 241,
+        },
+      ],
+      c02: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/395',
+          totalItem: 14,
+          totallSubItem: 395,
+        },
+      ],
+      c03: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/230',
+          totalItem: 13,
+          totallSubItem: 230,
+        },
+      ],
+      c04: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/140',
+          totalItem: 13,
+          totallSubItem: 140,
+        },
+      ],
+      c05: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/172',
+          totalItem: 14,
+          totallSubItem: 172,
+        },
+      ],
+      dwe: [
+        {
+          itemFinishedByPercent: 100,
+          subItemFInished: '8/8',
+          totalItem: 8,
+          totallSubItem: 8,
+        },
+      ],
+    },
+  ],
+};
 
 export const event = [
   {
