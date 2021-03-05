@@ -80,3 +80,14 @@ export const buttonsBarDatas = [
     name: '新手上路',
   },
 ];
+
+export const event = [
+  {
+    id: '1',
+    name: 'Pompom 的生日驚喜',
+    time: '2020/11/15 (日) 17:30~18:30',
+    image: Images.common.eventDefault,
+    aduslts: 2,
+    children: 3,
+  },
+];
