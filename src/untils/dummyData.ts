@@ -1,6 +1,6 @@
 import {Images, Icons} from '@src/assets';
 
-export const headerDats = [
+export const headerDatas = [
   {
     id: '1',
     title: '近距離 美語互動',
@@ -146,3 +146,14 @@ export const capData = {
     },
   ],
 };
+
+export const event = [
+  {
+    id: '1',
+    name: 'Pompom 的生日驚喜',
+    time: '2020/11/15 (日) 17:30~18:30',
+    image: Images.common.eventDefault,
+    aduslts: 2,
+    children: 3,
+  },
+];
