@@ -18,4 +18,7 @@ export const icons = {
     video: require('./icons/video.png'),
     noviceGuideline: require('./icons/noviceGuideline.png'),
   },
+  home: {
+    star: require('./icons/star.png'),
+  },
 };

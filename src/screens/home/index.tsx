@@ -5,7 +5,8 @@ import {Container} from '@src/screens/components';
 import {Colors} from '@src/assets';
 import Carousel from './components/Carousel';
 import ScrollableButtonsBar from './components/ScrollableButtonsBar';
-import {headerDats} from '@src/untils/dummyData';
+import PointProgress from './components/PointProgress';
+import {headerDats, capData} from '@src/untils/dummyData';
 
 interface Props {}
 
@@ -18,6 +19,10 @@ const Home = () => {
       <ScrollView style={styles.container}>
         <Carousel data={headerDats} />
         <ScrollableButtonsBar />
+        <PointProgress
+          points={capData.points}
+          limitPoints={capData.limitPoints}
+        />
       </ScrollView>
     </Container>
   );
