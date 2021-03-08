@@ -37,46 +37,47 @@ export const buttonsBarDatas = [
   {
     id: '3',
     icon: Icons.dummy.faceCall,
-    name: 'Face Call',
+    name: 'Face',
+    detail: 'FACE_CALL',
   },
   {
     id: '4',
-    icon: Icons.dummy.inactivitieAmerican,
+    icon: Icons.dummy.workInAmerican,
     name: '美語活動',
   },
   {
     id: '5',
-    icon: Icons.dummy.activitieAmerican,
+    icon: Icons.dummy.onlineAmerican,
     name: '線上美語活動',
   },
   {
     id: '6',
-    icon: Icons.dummy.activitieAmerican,
+    icon: Icons.dummy.wfcLibrary,
     name: 'WFC Library',
   },
   {
     id: '7',
     icon: Icons.dummy.familyGrowthAcademy,
-    name: '家庭 成長學苑',
+    name: '家庭成長 學苑',
   },
   {
     id: '8',
-    icon: Icons.dummy.momDadVideo,
-    name: 'Mom & Dad Video',
+    icon: Icons.dummy.video,
+    name: 'Mom&Dad Video',
   },
   {
     id: '9',
-    icon: Icons.dummy.point,
+    icon: Icons.dummy.points,
     name: '點數兌換',
   },
   {
     id: '10',
-    icon: Icons.dummy.video,
+    icon: Icons.dummy.director,
     name: 'Director Video',
   },
   {
     id: '11',
-    icon: Icons.dummy.noviceGuideline,
+    icon: Icons.dummy.novice,
     name: '新手上路',
   },
 ];

@@ -1,6 +1,8 @@
 export default {
   black: 'black',
   greyDrank: '#9E9E9E',
+  greyVeryLight: '#CCC',
+  greyNightRider: '#333',
   orangeCarrot: '#F48120',
   orangeCarrotOpacity: 'rgba(244, 139, 32, 0.6)',
   orangeTacao: '#F9BA85',

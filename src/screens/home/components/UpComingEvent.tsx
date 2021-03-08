@@ -1,14 +1,23 @@
+import React from 'react';
+import {Image, StyleSheet, ImageSourcePropType} from 'react-native';
+import {View, Text, Button} from 'react-native-ui-lib';
+
 import {Colors, Images} from '@src/assets';
 import {images} from '@src/assets/Images';
 import {CardDefault} from '@src/screens/components';
-import React from 'react';
-import {Image, StyleSheet} from 'react-native';
-import {View, Text, Button} from 'react-native-ui-lib';
 
 interface Props {
-  item: any;
+  item: {
+    id: string;
+    name: string;
+    time: string;
+    image: ImageSourcePropType;
+    aduslts: number;
+    children: number;
+  };
   onDialog: () => void;
 }
+
 const UpComingEvent = ({item, onDialog}: Props) => {
   const renderImage = () => (
     <View br20 style={styles.view} center>
@@ -24,14 +33,22 @@ const UpComingEvent = ({item, onDialog}: Props) => {
     <View style={styles.content} marginH-10 flex-6>
       {item ? (
         <>
-          <Text style={[styles.space, styles.bold]}>{item.name}</Text>
+          <Text
+            color={Colors.greyNightRider}
+            style={[styles.space, styles.bold]}>
+            {item.name}
+          </Text>
           <Text color={Colors.orangeCarrot} style={styles.space}>
             {item.time}
           </Text>
           <View row centerV>
-            <Text style={styles.space}>大人 {item.aduslts} 位 </Text>
+            <Text color={Colors.greyNightRider} style={styles.space}>
+              {`大人 ${item.aduslts} 位 `}
+            </Text>
             <View br10 backgroundColor={Colors.black} height={5} width={5} />
-            <Text> 小孩 {item.children} 位</Text>
+            <Text color={Colors.greyNightRider} style={styles.space}>
+              {` 小孩 ${item.children} 位`}
+            </Text>
           </View>
         </>
       ) : (
@@ -39,6 +56,7 @@ const UpComingEvent = ({item, onDialog}: Props) => {
       )}
     </View>
   );
+
   return (
     <CardDefault title="即將到來活動">
       <View row br40 marginV-25 marginH-20 centerV spread>
@@ -48,7 +66,6 @@ const UpComingEvent = ({item, onDialog}: Props) => {
           label="電子票"
           backgroundColor={Colors.alizarin}
           labelStyle={styles.labelButton}
-          size="small"
           onPress={onDialog}
         />
       </View>
@@ -63,6 +80,7 @@ const UpComingEvent = ({item, onDialog}: Props) => {
     </CardDefault>
   );
 };
+
 const styles = StyleSheet.create({
   view: {
     backgroundColor: Colors.smokeWhite,
@@ -100,4 +118,5 @@ const styles = StyleSheet.create({
   labelButton: {fontSize: 14, height: 20},
   bold: {fontWeight: 'bold'},
 });
+
 export default UpComingEvent;
