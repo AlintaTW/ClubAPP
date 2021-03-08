@@ -1,15 +1,38 @@
-import React from 'react';
+import React, {FC, ReactNode} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import {StyleSheet, View} from 'react-native';
+import {Platform, StyleSheet, View} from 'react-native';
 
-import {Colors} from '@src/assets';
+import {
+  Colors,
+  IconHome,
+  IconHistory,
+  IconFavorite,
+  IconNotifications,
+  IconProfile,
+} from '@src/assets';
 import {HomeScreen} from '@src/screens';
 import i18n from '@src/localization';
 import HomeStack from './HomeStack';
 
 const Tab = createBottomTabNavigator();
+
+interface IconProps {
+  active?: boolean;
+  children: ReactNode;
+}
+
+const Icon: FC<IconProps> = ({active, children}) => {
+  if (active) {
+    return (
+      <View style={styles.containerIcon}>
+        <View style={styles.line} />
+        <View style={styles.tabIcon} />
+        <View style={styles.containerActive}>{children}</View>
+      </View>
+    );
+  }
+  return <>{children}</>;
+};
 
 const MainTab = () => (
   <Tab.Navigator
@@ -26,18 +49,11 @@ const MainTab = () => (
       options={{
         title: i18n.t('navigation.home'),
         unmountOnBlur: true,
-        tabBarIcon: ({color}) =>
-          color === Colors.readAlizarin ? (
-            <View style={styles.containerActive}>
-              <MaterialIcons
-                color={color}
-                name="home"
-                style={styles.iconActive}
-              />
-            </View>
-          ) : (
-            <MaterialIcons color={color} name="home" style={styles.icon} />
-          ),
+        tabBarIcon: ({color}) => (
+          <Icon active={color === Colors.readAlizarin}>
+            <IconHome active={color === Colors.readAlizarin} color={color} />
+          </Icon>
+        ),
       }}
       component={HomeStack}
     />
@@ -46,18 +62,11 @@ const MainTab = () => (
       options={{
         title: i18n.t('navigation.history'),
         unmountOnBlur: true,
-        tabBarIcon: ({color}) =>
-          color === Colors.readAlizarin ? (
-            <View style={styles.containerActive}>
-              <Ionicons
-                color={color}
-                name="ios-calendar"
-                style={styles.iconActive}
-              />
-            </View>
-          ) : (
-            <Ionicons color={color} name="ios-calendar" style={styles.icon} />
-          ),
+        tabBarIcon: ({color}) => (
+          <Icon active={color === Colors.readAlizarin}>
+            <IconHistory color={color} />
+          </Icon>
+        ),
       }}
       component={HomeScreen}
     />
@@ -66,18 +75,11 @@ const MainTab = () => (
       options={{
         title: i18n.t('navigation.favorite'),
         unmountOnBlur: true,
-        tabBarIcon: ({color}) =>
-          color === Colors.readAlizarin ? (
-            <View style={styles.containerActive}>
-              <MaterialIcons
-                color={color}
-                name="favorite"
-                style={styles.iconActive}
-              />
-            </View>
-          ) : (
-            <MaterialIcons color={color} name="favorite" style={styles.icon} />
-          ),
+        tabBarIcon: ({color}) => (
+          <Icon active={color === Colors.readAlizarin}>
+            <IconFavorite color={color} />
+          </Icon>
+        ),
       }}
       component={HomeScreen}
     />
@@ -86,22 +88,11 @@ const MainTab = () => (
       options={{
         title: i18n.t('navigation.notification'),
         unmountOnBlur: true,
-        tabBarIcon: ({color}) =>
-          color === Colors.readAlizarin ? (
-            <View style={styles.containerActive}>
-              <MaterialIcons
-                color={color}
-                name="notifications"
-                style={styles.iconActive}
-              />
-            </View>
-          ) : (
-            <MaterialIcons
-              color={color}
-              name="notifications"
-              style={styles.icon}
-            />
-          ),
+        tabBarIcon: ({color}) => (
+          <Icon active={color === Colors.readAlizarin}>
+            <IconNotifications color={color} />
+          </Icon>
+        ),
       }}
       component={HomeScreen}
     />
@@ -110,18 +101,11 @@ const MainTab = () => (
       options={{
         title: i18n.t('navigation.profile'),
         unmountOnBlur: true,
-        tabBarIcon: ({color}) =>
-          color === Colors.readAlizarin ? (
-            <View style={styles.containerActive}>
-              <MaterialIcons
-                color={color}
-                name="person"
-                style={styles.iconActive}
-              />
-            </View>
-          ) : (
-            <MaterialIcons color={color} name="person" style={styles.icon} />
-          ),
+        tabBarIcon: ({color}) => (
+          <Icon active={color === Colors.readAlizarin}>
+            <IconProfile color={color} />
+          </Icon>
+        ),
       }}
       component={HomeScreen}
     />
@@ -130,13 +114,36 @@ const MainTab = () => (
 
 const styles = StyleSheet.create({
   containerActive: {
+    position: 'absolute',
     alignItems: 'center',
-    backgroundColor: Colors.white,
-    borderRadius: 40,
+    backgroundColor: Colors.transparent,
+    borderRadius: 30,
     display: 'flex',
-    height: 80,
+    height: 60,
     justifyContent: 'center',
-    width: 80,
+    marginTop: -5,
+    width: 60,
+  },
+  containerIcon: {
+    height: 60,
+    width: 60,
+    backgroundColor: Colors.white,
+    borderRadius: 30,
+  },
+  line: {
+    height: 60,
+    width: 60,
+    borderRadius: 30,
+    borderWidth: 0.5,
+    borderColor: Colors.greyVeryLight,
+    opacity: 0.8,
+  },
+  tabIcon: {
+    backgroundColor: Colors.white,
+    position: 'absolute',
+    height: Platform.OS === 'ios' ? 45 : 42,
+    width: 60,
+    bottom: 0,
   },
   icon: {
     fontSize: 25,

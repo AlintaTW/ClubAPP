@@ -6,6 +6,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import {Colors, Icons, Metrics} from '@src/assets';
 import i18n from '@src/localization';
+import {CardDefault} from '@src/screens/components';
 
 interface Props {
   points: number;
@@ -28,6 +29,11 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
   const valueProgress = useMemo(() => {
     if (points === 0 || limitPoints - 100 > points) {
       return 5;
+    }
+    if (limitPoints < 100 && limitPoints > points) {
+      const surplus = points % limitPoints;
+      const value = ((Metrics.screen.width - 195) / limitPoints) * surplus;
+      return value >= 5 ? value : 5;
     }
     if (points < limitPoints) {
       const surplus = points % 100;
@@ -54,76 +60,78 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
   ]);
 
   return (
-    <View style={styles.container}>
-      <ImageBackground source={Icons.home.star} style={styles.point}>
-        <Text style={styles.textPointNumber}>{points}</Text>
-        <Text style={styles.textPoint}>{i18n.t('home.point')}</Text>
-      </ImageBackground>
-      <View style={styles.containerProgress}>
-        <View
-          style={[
-            styles.containerTitle,
-            isPoint0 ? {} : styles.containerTitleRight,
-          ]}>
+    <CardDefault marginV-30>
+      <View style={styles.container}>
+        <ImageBackground source={Icons.home.star} style={styles.point}>
+          <Text style={styles.textPointNumber}>{points}</Text>
+          <Text style={styles.textPoint}>{i18n.t('home.point')}</Text>
+        </ImageBackground>
+        <View style={styles.containerProgress}>
           <View
             style={[
-              styles.titleView,
-              isReachedPoints ? {backgroundColor: Colors.readAlizarin} : {},
+              styles.containerTitle,
+              isPoint0 ? {} : styles.containerTitleRight,
             ]}>
-            <Text style={styles.title}>
-              {accumulateMoreValue
-                ? accumulateMoreValue === 0
-                  ? i18n.t('home.reached_points')
-                  : i18n.t('home.accumulate_more', {
-                      value: accumulateMoreValue,
-                    })
-                : i18n.t('home.accumulation')}
-            </Text>
+            <View
+              style={[
+                styles.titleView,
+                isReachedPoints ? {backgroundColor: Colors.readAlizarin} : {},
+              ]}>
+              <Text style={styles.title}>
+                {accumulateMoreValue
+                  ? accumulateMoreValue === 0
+                    ? i18n.t('home.reached_points')
+                    : i18n.t('home.accumulate_more', {
+                        value: accumulateMoreValue,
+                      })
+                  : i18n.t('home.accumulation')}
+              </Text>
+            </View>
           </View>
-        </View>
-        <Ionicons
-          name="triangle"
-          style={[
-            isPoint0 ? styles.start : styles.end,
-            isReachedPoints ? {color: Colors.readAlizarin} : {},
-          ]}
-        />
-        <View style={[styles.progressBar, styles.progressView]}>
-          <View style={styles.progressBar}>
-            <LinearGradient
-              colors={[Colors.whiteGainsboro, Colors.whiteSmoke]}
-              style={styles.progressBar}
-              start={{x: 0, y: 1}}
-              end={{x: 1, y: 1}}>
+          <Ionicons
+            name="triangle"
+            style={[
+              isPoint0 ? styles.start : styles.end,
+              isReachedPoints ? {color: Colors.readAlizarin} : {},
+            ]}
+          />
+          <View style={[styles.progressBar, styles.progressView]}>
+            <View style={styles.progressBar}>
               <LinearGradient
-                colors={[Colors.orangeTacao, Colors.orangeCarrot]}
-                style={[styles.progressBarLine, {width: valueProgress}]}
+                colors={[Colors.whiteGainsboro, Colors.whiteSmoke]}
+                style={styles.progressBar}
                 start={{x: 0, y: 1}}
-                end={{x: 1, y: 1}}
-              />
-            </LinearGradient>
+                end={{x: 1, y: 1}}>
+                <LinearGradient
+                  colors={[Colors.orangeTacao, Colors.orangeCarrot]}
+                  style={[styles.progressBarLine, {width: valueProgress}]}
+                  start={{x: 0, y: 1}}
+                  end={{x: 1, y: 1}}
+                />
+              </LinearGradient>
+            </View>
+            <MaterialIcons name="star" style={styles.icon} />
           </View>
-          <MaterialIcons name="star" style={styles.icon} />
-        </View>
-        <View style={styles.containerDot}>
-          <View
-            style={
-              valueStart === 0 ? styles.dotViewStart0 : styles.dotViewStart
-            }>
-            <View style={styles.dot} />
-            <Text style={[styles.textValue, styles.textStart]}>
-              {valueStart}
-            </Text>
-          </View>
-          <View style={styles.dotViewEnd}>
-            <View style={styles.dotEnd} />
-            <Text style={[styles.textValue, styles.textEnd]}>
-              {limitPoints}
-            </Text>
+          <View style={styles.containerDot}>
+            <View
+              style={
+                valueStart === 0 ? styles.dotViewStart0 : styles.dotViewStart
+              }>
+              <View style={styles.dot} />
+              <Text style={[styles.textValue, styles.textStart]}>
+                {valueStart}
+              </Text>
+            </View>
+            <View style={styles.dotViewEnd}>
+              <View style={styles.dotEnd} />
+              <Text style={[styles.textValue, styles.textEnd]}>
+                {limitPoints}
+              </Text>
+            </View>
           </View>
         </View>
       </View>
-    </View>
+    </CardDefault>
   );
 };
 
@@ -135,8 +143,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     height: 95,
-    marginHorizontal: 15,
-    marginTop: 35,
     overflow: 'hidden',
   },
   containerTitle: {
@@ -180,6 +186,7 @@ const styles = StyleSheet.create({
     height: 95,
     justifyContent: 'center',
     marginRight: 25,
+    maxWidth: Metrics.screen.width - 180,
   },
   start0: {
     transform: [{rotate: '180deg'}],
@@ -237,6 +244,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'space-between',
     flexDirection: 'row',
+    maxWidth: Metrics.screen.width - 180,
   },
   dot: {
     height: 5,
