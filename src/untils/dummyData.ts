@@ -158,3 +158,30 @@ export const event = [
     children: 3,
   },
 ];
+
+export const onlineEvent = [
+  {
+    thumnail: Images.common.onlineEvent,
+    videoUrl:
+      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+    title: 'World Family Club Show - ABC',
+  },
+  {
+    thumnail: Images.common.onlineEvent,
+    videoUrl:
+      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+    title: 'World Family Club Show - ABC',
+  },
+  {
+    thumnail: Images.common.onlineEvent,
+    videoUrl:
+      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+    title: 'World Family Club Show - ABC',
+  },
+  {
+    thumnail: Images.common.onlineEvent,
+    videoUrl:
+      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+    title: 'World Family Club Show - ABC',
+  },
+];
