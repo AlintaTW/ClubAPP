@@ -11,6 +11,7 @@ import NoRegister from './components/NoRegister';
 import VideoLayout from './components/VideoLayout';
 import OnlineEvent from './components/OnlineEvent';
 import {event, headerDatas, capData} from '@src/untils/dummyData';
+import CapChart from './capChart';
 
 interface Props {}
 
@@ -38,6 +39,7 @@ const Home: FC<Props> = () => {
           points={capData.points}
           limitPoints={capData.limitPoints}
         />
+        <CapChart data={capData.children} />
         <UpComingEvent item={event[0]} onDialog={onDialog} />
         <NoRegister isVisiable={isVisiable} onDialog={onDialog} />
         <OnlineEvent onDisplay={onVideo} />
