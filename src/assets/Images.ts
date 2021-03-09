@@ -3,10 +3,11 @@ export const images = {
     header: require('./images/headerImage.png'),
   },
   common: {
-    errorLayout: require('./images/errorLayout.png'),
     arrowLeft: require('./images/imageLeft.png'),
     arrowRight: require('./images/imageRight.png'),
+    errorLayout: require('./images/errorLayout.png'),
     eventDefault: require('./images/eventImage.png'),
+    onlineEvent: require('./images/onlineEventImage.png'),
   },
 };
 
