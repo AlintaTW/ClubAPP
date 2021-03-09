@@ -1,5 +1,6 @@
 export const images = {
   dummy: {
+    avatar: require('./images/demoAvatar.png'),
     header: require('./images/headerImage.png'),
   },
   common: {
