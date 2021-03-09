@@ -3,7 +3,7 @@ import {StyleSheet, ScrollView} from 'react-native';
 
 import {Container} from '@src/screens/components';
 import {Colors} from '@src/assets';
-import Carousel from './components/Carousel';
+import Banner from './components/Banner';
 import ScrollableButtonsBar from './components/ScrollableButtonsBar';
 import PointProgress from './components/PointProgress';
 import UpComingEvent from './components/UpComingEvent';
@@ -32,7 +32,7 @@ const Home: FC<Props> = () => {
       barStyle="light-content"
       backgroundBody={Colors.yellowHalfDutchWhite}>
       <ScrollView style={styles.container}>
-        <Carousel data={headerDatas} />
+        <Banner data={headerDatas} />
         <ScrollableButtonsBar />
         <PointProgress
           points={capData.points}

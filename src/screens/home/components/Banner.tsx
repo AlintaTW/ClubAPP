@@ -31,24 +31,22 @@ const Item: FC<ItemProps> = ({banner, title}) => (
   </ImageBackground>
 );
 
-const TopCarousel: FC<Props> = ({data}) => {
-  return (
-    <Carousel
-      autoplay
-      loop
-      pageControlProps={{
-        size: 10,
-        inactiveColor: Colors.white,
-        color: Colors.orangeCarrot,
-        containerStyle: styles.containerStyle,
-      }}
-      pageControlPosition={Carousel.pageControlPositions.OVER}>
-      {data.map((props) => (
-        <Item key={props.id} {...props} />
-      ))}
-    </Carousel>
-  );
-};
+const Banner: FC<Props> = ({data}) => (
+  <Carousel
+    autoplay
+    loop
+    pageControlProps={{
+      size: 10,
+      inactiveColor: Colors.white,
+      color: Colors.orangeCarrot,
+      containerStyle: styles.containerStyle,
+    }}
+    pageControlPosition={Carousel.pageControlPositions.OVER}>
+    {data.map((props) => (
+      <Item key={props.id} {...props} />
+    ))}
+  </Carousel>
+);
 
 const styles = StyleSheet.create({
   containerStyle: {
@@ -76,4 +74,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo<Props>(TopCarousel);
+export default memo<Props>(Banner);

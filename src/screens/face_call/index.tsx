@@ -3,6 +3,7 @@ import {StyleSheet, TouchableOpacity} from 'react-native';
 import {View, Text} from 'react-native-ui-lib';
 
 import {Colors, Metrics} from '@src/assets';
+import {Container} from '@src/screens/components';
 
 interface Props {
   navigation: any;
@@ -14,11 +15,15 @@ const FaceCall: FC<Props> = ({navigation}) => {
   }, [navigation]);
 
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.button} onPress={onGoBack}>
-        <Text style={styles.textButton}>{'Go Back'}</Text>
-      </TouchableOpacity>
-    </View>
+    <Container
+      backgroundColor={Colors.orangeTacao}
+      backgroundBody={Colors.orangeTacao}>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.button} onPress={onGoBack}>
+          <Text style={styles.textButton}>{'Go Back'}</Text>
+        </TouchableOpacity>
+      </View>
+    </Container>
   );
 };
 
