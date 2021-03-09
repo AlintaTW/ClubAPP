@@ -3,22 +3,31 @@ import {StyleSheet} from 'react-native';
 import {Card, Text, View} from 'react-native-ui-lib';
 interface Props {
   title?: string;
+  titleColor?: string;
   children: React.ReactNode;
+  button?: React.ReactNode;
   style?: any;
 }
 
-const CardDefault: FC<Props> = ({title, children, ...style}) => {
-  return (
-    <View paddingH-16 marginV-20 {...style}>
+const CardDefault: FC<Props> = ({
+  title,
+  titleColor,
+  children,
+  button,
+  ...style
+}) => (
+  <View paddingH-16 marginV-10 {...style}>
+    <View row spread>
       {title && (
-        <Text style={styles.title} marginL-20 marginV-15>
+        <Text style={styles.title} marginL-20 marginV-15 color={titleColor}>
           {title}
         </Text>
       )}
-      <Card>{children}</Card>
+      {button}
     </View>
-  );
-};
+    <Card>{children}</Card>
+  </View>
+);
 
 const styles = StyleSheet.create({
   title: {fontSize: 20, fontWeight: 'bold'},

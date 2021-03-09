@@ -48,20 +48,18 @@ const renderKeyExtractor = (item: ItemProps) => item.id;
 
 const renderItem = ({item}: {item: ItemProps}) => <Item {...item} />;
 
-const ScrollableButtonsBar = () => {
-  return (
-    <FlatList
-      refreshing
-      horizontal
-      data={buttonsBarDatas}
-      keyExtractor={renderKeyExtractor}
-      onEndReachedThreshold={0.2}
-      renderItem={renderItem}
-      showsHorizontalScrollIndicator={false}
-      style={styles.container}
-    />
-  );
-};
+const ScrollableButtonsBar = () => (
+  <FlatList
+    refreshing
+    horizontal
+    data={buttonsBarDatas}
+    keyExtractor={renderKeyExtractor}
+    onEndReachedThreshold={0.2}
+    renderItem={renderItem}
+    showsHorizontalScrollIndicator={false}
+    style={styles.container}
+  />
+);
 
 const styles = StyleSheet.create({
   container: {

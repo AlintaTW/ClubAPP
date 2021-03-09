@@ -1,46 +1,43 @@
 import React, {FC} from 'react';
-import {Dimensions, StatusBar, StyleSheet} from 'react-native';
+import {Dimensions, StyleSheet} from 'react-native';
 import {Button, Card, Dialog, Text, View} from 'react-native-ui-lib';
 
-import {Colors} from '@src/assets';
-import {images} from '@src/assets/Images';
+import {Colors, Images} from '@src/assets';
 
 interface Props {
   isVisiable: boolean;
   onDialog: () => void;
 }
-const NoRegister: FC<Props> = ({isVisiable, onDialog}) => {
-  return (
-    <Dialog
-      visible={isVisiable}
-      height={Dimensions.get('screen').height}
-      overlayBackgroundColor={Colors.kabulOpacity}>
-      <StatusBar backgroundColor={Colors.orangeCarrotOpacity} />
-      <Card height={288} style={styles.container}>
-        <Card.Section
-          imageSource={images.common.errorLayout}
-          imageStyle={styles.layoutImage}
-        />
-        <View style={styles.content} br40 padding-35>
-          <View height={210}>
-            <Text style={styles.title} marginB-20 marginT-10>
-              活動電子票尚未提供
-            </Text>
-            <Text style={styles.textContent}>
-              已經報名的活動，由於活動票務建立作業時間，將於活動到來的七天前起，經由系統提供給會員查閱！謝謝！
-            </Text>
-            <Button
-              label="我知道了"
-              backgroundColor={Colors.alizarin}
-              style={styles.button}
-              onPress={onDialog}
-            />
-          </View>
+const NoRegister: FC<Props> = ({isVisiable, onDialog}) => (
+  <Dialog
+    visible={isVisiable}
+    height={Dimensions.get('screen').height}
+    overlayBackgroundColor={Colors.brownKabul50}>
+    <Card height={288} style={styles.container}>
+      <Card.Section
+        imageSource={Images.common.errorLayout}
+        imageStyle={styles.layoutImage}
+      />
+      <View style={styles.content} br40 padding-35>
+        <View height={210} centerH>
+          <Text style={styles.title} marginB-20 marginT-10>
+            活動電子票尚未提供
+          </Text>
+          <Text style={styles.textContent}>
+            已經報名的活動，由於活動票務建立作業時間，將於活動到來的七天前起，經由系統提供給會員查閱！謝謝！
+          </Text>
+          <Button
+            label="我知道了"
+            backgroundColor={Colors.readAlizarin}
+            style={styles.button}
+            onPress={onDialog}
+          />
         </View>
-      </Card>
-    </Dialog>
-  );
-};
+      </View>
+    </Card>
+  </Dialog>
+);
+
 const styles = StyleSheet.create({
   container: {
     marginTop: Dimensions.get('screen').height / 3,
@@ -65,10 +62,10 @@ const styles = StyleSheet.create({
     textAlign: 'justify',
   },
   button: {
-    width: 176,
+    minWidth: 176,
     bottom: 0,
     position: 'absolute',
-    alignSelf: 'center',
   },
 });
+
 export default NoRegister;
