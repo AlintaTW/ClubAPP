@@ -1,7 +1,9 @@
 import React from 'react';
-import AppNavigation from '@src/navigation'
-
-import { ReduxProvider } from '@src/redux';
+import AppNavigation from '@src/navigation';
+import {ReduxProvider} from '@src/redux';
+// ui config
+import '@src/ui/foundationConfig';
+import '@src/ui/componentsConfig';
 
 const App: () => React.ReactNode = () => {
   return (
@@ -10,6 +12,5 @@ const App: () => React.ReactNode = () => {
     </ReduxProvider>
   );
 };
-
 
 export default App;
