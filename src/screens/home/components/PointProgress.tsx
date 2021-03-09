@@ -60,7 +60,7 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
   ]);
 
   return (
-    <CardDefault marginV-30>
+    <CardDefault>
       <View style={styles.container}>
         <ImageBackground source={Icons.home.star} style={styles.point}>
           <Text style={styles.textPointNumber}>{points}</Text>
