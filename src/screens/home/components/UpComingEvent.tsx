@@ -1,9 +1,8 @@
-import React from 'react';
+import React, {FC, memo} from 'react';
 import {Image, StyleSheet, ImageSourcePropType} from 'react-native';
 import {View, Text, Button} from 'react-native-ui-lib';
 
 import {Colors, Images} from '@src/assets';
-import {images} from '@src/assets/Images';
 import {CardDefault} from '@src/screens/components';
 
 interface Props {
@@ -18,7 +17,7 @@ interface Props {
   onDialog: () => void;
 }
 
-const UpComingEvent = ({item, onDialog}: Props) => {
+const UpComingEvent: FC<Props> = ({item, onDialog}) => {
   const renderImage = () => (
     <View br20 style={styles.view} center>
       {item && item.image ? (
@@ -52,7 +51,7 @@ const UpComingEvent = ({item, onDialog}: Props) => {
           </View>
         </>
       ) : (
-        <Text>尚無即將到來的活動</Text>
+        <Text color={Colors.greyNightRider}>尚無即將到來的活動</Text>
       )}
     </View>
   );
@@ -63,18 +62,19 @@ const UpComingEvent = ({item, onDialog}: Props) => {
         {renderImage()}
         {renderEvent()}
         <Button
+          size={Button.sizes.small}
           label="電子票"
-          backgroundColor={Colors.alizarin}
+          backgroundColor={Colors.readAlizarin}
           labelStyle={styles.labelButton}
           onPress={onDialog}
         />
       </View>
       <Image
-        source={images.common.arrowLeft}
+        source={Images.common.arrowLeft}
         style={[styles.imageLeft, styles.imageStyle]}
       />
       <Image
-        source={images.common.arrowRight}
+        source={Images.common.arrowRight}
         style={[styles.imageRight, styles.imageStyle]}
       />
     </CardDefault>
@@ -83,7 +83,7 @@ const UpComingEvent = ({item, onDialog}: Props) => {
 
 const styles = StyleSheet.create({
   view: {
-    backgroundColor: Colors.smokeWhite,
+    backgroundColor: Colors.whiteSmoke,
     width: 72,
     height: 72,
   },
@@ -115,8 +115,8 @@ const styles = StyleSheet.create({
     left: 0,
   },
   space: {lineHeight: 20, fontSize: 14},
-  labelButton: {fontSize: 14, height: 20},
+  labelButton: {fontSize: 14},
   bold: {fontWeight: 'bold'},
 });
 
-export default UpComingEvent;
+export default memo<Props>(UpComingEvent);
