@@ -1,5 +1,6 @@
 import {BorderRadiuses, Typography, Spacings} from 'react-native-ui-lib';
 import {Platform} from 'react-native';
+import {actuatedNormalize} from '@src/untils/viewScale';
 
 BorderRadiuses.loadBorders({
   br10: 10,
@@ -16,31 +17,34 @@ Typography.loadTypographies({
     fontWeight: 'bold',
   },
   fs24: {
-    fontSize: 24,
+    fontSize: actuatedNormalize(24),
   },
   fs20: {
-    fontSize: 20,
+    fontSize: actuatedNormalize(20),
   },
   fs19: {
-    fontSize: 19,
+    fontSize: actuatedNormalize(19),
   },
   fs18: {
-    fontSize: 18,
+    fontSize: actuatedNormalize(18),
   },
   fs17: {
-    fontSize: 17,
+    fontSize: actuatedNormalize(17),
   },
   fs16: {
-    fontSize: 16,
+    fontSize: actuatedNormalize(16),
   },
   fs15: {
-    fontSize: 15,
+    fontSize: actuatedNormalize(15),
   },
   fs14: {
-    fontSize: 14,
+    fontSize: actuatedNormalize(14),
   },
   fs12: {
-    fontSize: 12,
+    fontSize: actuatedNormalize(13),
+  },
+  fs10: {
+    fontSize: actuatedNormalize(10),
   },
   fw9: {
     fontWeight: Platform.OS === 'ios' ? '900' : 'bold',
