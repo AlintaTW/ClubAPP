@@ -26,7 +26,7 @@ interface CapItem {
 interface Chart {
   //
 }
-const width = (Metrics.screen.width - 92) / 6;
+const width = (Metrics.screen.width - 84) / 6;
 const chartWidth = width; // width of chart
 const diffHeight = 7; // the difference hight between 2 consecutive charts
 const chartHight = 64; // height of the highest chart

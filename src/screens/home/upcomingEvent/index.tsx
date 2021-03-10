@@ -8,7 +8,7 @@ const UpComingEventCard: FC<any> = ({data}: any) => {
   const [isVisiable, setVisiable] = useState(false);
   const onDialog = useCallback(() => {
     setVisiable(!isVisiable);
-  }, [isVisiable]);
+  }, [isVisiable, setVisiable]);
 
   return (
     <View>
