@@ -57,7 +57,7 @@ const UpComingEvent: FC<Props> = ({item, onDialog}) => {
   );
 
   return (
-    <CardDefault title="即將到來活動">
+    <CardDefault marginT-15 title="即將到來活動">
       <View row br40 marginV-25 marginH-20 centerV spread>
         {renderImage()}
         {renderEvent()}
