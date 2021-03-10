@@ -13,20 +13,18 @@ export const images = {
 };
 
 export const icons = {
-  dummy: {
-    cap: require('./icons/cap.png'),
-    phone: require('./icons/phone.png'),
-    faceCall: require('./icons/faceCall.png'),
-    workInAmerican: require('./icons/workInAmerican.png'),
-    onlineAmerican: require('./icons/onlineAmerican.png'),
-    wfcLibrary: require('./icons/wfcLibrary.png'),
-    familyGrowthAcademy: require('./icons/familyGrowthAcademy.png'),
-    video: require('./icons/video.png'),
-    points: require('./icons/points.png'),
-    director: require('./icons/director.png'),
-    novice: require('./icons/novice.png'),
-  },
   home: {
     star: require('./icons/star.png'),
+    cap: require('./icons/cap.png'),
+    telephoneEnglish: require('./icons/telephoneEnglish.png'),
+    faceCall: require('./icons/faceCall.png'),
+    event: require('./icons/event.png'),
+    onlineEvent: require('./icons/onlineEvent.png'),
+    wfcLibrary: require('./icons/wfcLibrary.png'),
+    parentWorkShop: require('./icons/parentWorkShop.png'),
+    momDadVideo: require('./icons/momDadVideo.png'),
+    points: require('./icons/points.png'),
+    directorVideo: require('./icons/directorVideo.png'),
+    newHand: require('./icons/newHand.png'),
   },
 };

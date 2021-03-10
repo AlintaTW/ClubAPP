@@ -7,10 +7,25 @@
     "profile": "我的專區"
   },
   "home": {
-    "point": "學習點數",
-    "accumulation": "開始累積學習點數，兌換精美禮物",
-    "accumulate_more": "再{{value}}點就可以兌換精美禮物",
-    "reached_points": "學習點數已足夠，去兌換禮品",
+    "scrollable_buttons_bar": {
+      "cap": "CAP",
+      "telephone_english": "電話美語",
+      "face_call": "Face",
+      "event": "美語活動",
+      "on-line_event": "線上美語活動",
+      "wfc_library": "WFC Library",
+      "parent_work_shop": "家庭成長 學苑",
+      "mom_dad_video": "Mom&Dad Video",
+      "points": "點數兌換",
+      "director_video": "Director Video",
+      "new_hand": "新手上路"
+    },
+    "point_progress": {
+      "learning_points": "學習點數",
+      "start_accumulate": "開始累積學習點數，兌換精美禮物",
+      "accumulate_more": "再{{value}}點就可以兌換精美禮物",
+      "goal_archive": "學習點數已足夠，去兌換禮品"
+    },
     "upcoming_event": "即將到來活動",
     "online_event": "最新 Online Event",
     "all": "全部",

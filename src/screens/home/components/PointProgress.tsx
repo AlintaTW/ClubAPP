@@ -67,8 +67,13 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
           <Text center fs40 style={styles.textPointNumber}>
             {points}
           </Text>
-          <Text center fs14 color={Colors.black} style={styles.textPoint}>
-            {i18n.t('home.point')}
+          <Text
+            center
+            fs14
+            color={Colors.black}
+            numberOfLines={1}
+            style={styles.textPoint}>
+            {i18n.t('home.point_progress.learning_points')}
           </Text>
         </ImageBackground>
         <View centerV marginR-25 style={styles.containerProgress}>
@@ -88,11 +93,11 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
               <Text fs10 style={styles.title}>
                 {accumulateMoreValue
                   ? accumulateMoreValue === 0
-                    ? i18n.t('home.reached_points')
-                    : i18n.t('home.accumulate_more', {
+                    ? i18n.t('home.point_progress.goal_archive')
+                    : i18n.t('home.point_progress.accumulate_more', {
                         value: accumulateMoreValue,
                       })
-                  : i18n.t('home.accumulation')}
+                  : i18n.t('home.point_progress.start_accumulate')}
               </Text>
             </View>
           </View>
@@ -174,6 +179,8 @@ const styles = StyleSheet.create({
   textPoint: {
     opacity: 0.38,
     paddingBottom: 7,
+    minWidth: 100,
+    alignSelf: 'center',
   },
   textPointNumber: {
     color: Colors.orangeCarrot,

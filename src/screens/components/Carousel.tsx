@@ -1,19 +1,15 @@
 import React, {FC, memo} from 'react';
-import Swiper from 'react-native-swiper';
+import Swiper, {SwiperProps} from 'react-native-swiper';
 import {View, StyleSheet} from 'react-native';
 
 import {Colors} from '@src/assets';
 
 interface Props {
   children: React.ReactNode;
-  props?: any;
 }
 
-const Carousel: FC<Props> = ({children, ...props}) => (
+const Carousel: FC<Props & SwiperProps> = ({children, ...props}) => (
   <Swiper
-    loop
-    autoplay
-    height={230}
     paginationStyle={styles.paginationStyle}
     activeDot={<View style={styles.active} />}
     dot={<View style={styles.inActive} />}
@@ -44,4 +40,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default memo<Props>(Carousel);
+export default memo<Props & SwiperProps>(Carousel);

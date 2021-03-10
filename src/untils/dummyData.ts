@@ -1,4 +1,4 @@
-import {Images, Icons} from '@src/assets';
+import {Images} from '@src/assets';
 
 export const headerDatas = [
   {
@@ -20,65 +20,6 @@ export const headerDatas = [
     id: '4',
     title: '近距離 美語互動',
     banner: Images.dummy.header,
-  },
-];
-
-export const buttonsBarDatas = [
-  {
-    id: '1',
-    icon: Icons.dummy.cap,
-    name: 'CAP',
-  },
-  {
-    id: '2',
-    icon: Icons.dummy.phone,
-    name: '電話美語',
-  },
-  {
-    id: '3',
-    icon: Icons.dummy.faceCall,
-    name: 'Face',
-    detail: 'FACE_CALL',
-  },
-  {
-    id: '4',
-    icon: Icons.dummy.workInAmerican,
-    name: '美語活動',
-  },
-  {
-    id: '5',
-    icon: Icons.dummy.onlineAmerican,
-    name: '線上美語活動',
-  },
-  {
-    id: '6',
-    icon: Icons.dummy.wfcLibrary,
-    name: 'WFC Library',
-  },
-  {
-    id: '7',
-    icon: Icons.dummy.familyGrowthAcademy,
-    name: '家庭成長 學苑',
-  },
-  {
-    id: '8',
-    icon: Icons.dummy.video,
-    name: 'Mom&Dad Video',
-  },
-  {
-    id: '9',
-    icon: Icons.dummy.points,
-    name: '點數兌換',
-  },
-  {
-    id: '10',
-    icon: Icons.dummy.director,
-    name: 'Director Video',
-  },
-  {
-    id: '11',
-    icon: Icons.dummy.novice,
-    name: '新手上路',
   },
 ];
 

@@ -10,12 +10,12 @@ import {View, Text} from 'react-native-ui-lib';
 import {useNavigation} from '@react-navigation/native';
 
 import {Colors} from '@src/assets';
-import {buttonsBarDatas} from '@src/untils/dummyData';
+import {APP_CONFIG} from '@src/config';
+import i18n from '@src/localization';
 
 interface Props {}
 
 interface ItemProps {
-  id: string;
   icon: ImageSourcePropType;
   name: string;
   detail?: string;
@@ -38,15 +38,16 @@ const Item: FC<ItemProps> = ({icon, name, detail}) => {
       <View br30 center style={styles.item}>
         <Image source={icon} />
       </View>
-      <View style={styles.space} />
-      <Text center fs14 color={Colors.orangeCarrot}>
-        {name}
-      </Text>
+      <View flex center>
+        <Text center fs14 color={Colors.orangeCarrot}>
+          {i18n.t(`home.scrollable_buttons_bar.${name}`)}
+        </Text>
+      </View>
     </TouchableOpacity>
   );
 };
 
-const renderKeyExtractor = (item: ItemProps) => item.id;
+const renderKeyExtractor = (item: ItemProps, index: number) => index.toString();
 
 const renderItem = ({item}: {item: ItemProps}) => <Item {...item} />;
 
@@ -54,7 +55,7 @@ const ScrollableButtonsBar = () => (
   <FlatList
     refreshing
     horizontal
-    data={buttonsBarDatas}
+    data={APP_CONFIG.scrollableButtons}
     keyExtractor={renderKeyExtractor}
     onEndReachedThreshold={0.2}
     renderItem={renderItem}
@@ -79,9 +80,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     height: 60,
     width: 60,
-  },
-  space: {
-    flex: 1,
   },
 });
 
