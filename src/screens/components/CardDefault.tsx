@@ -30,7 +30,7 @@ const CardDefault: FC<Props> = ({
       )}
       {button}
     </View>
-    <Card>{children}</Card>
+    <Card enableShadow={false}>{children}</Card>
   </View>
 );
 

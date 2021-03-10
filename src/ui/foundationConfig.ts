@@ -22,8 +22,14 @@ Typography.loadTypographies({
   fs40: {
     fontSize: actuatedNormalize(40),
   },
+  fs28: {
+    fontSize: actuatedNormalize(28),
+  },
   fs24: {
     fontSize: actuatedNormalize(24),
+  },
+  fs22: {
+    fontSize: actuatedNormalize(22),
   },
   fs20: {
     fontSize: actuatedNormalize(20),
