@@ -1,6 +1,6 @@
 import React, {FC, ReactNode} from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Platform, StyleSheet, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
 import {
   Colors,
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
   tabIcon: {
     backgroundColor: Colors.white,
     position: 'absolute',
-    height: Platform.OS === 'ios' ? 46 : 45,
+    height: 45,
     width: 60,
     bottom: 0,
   },

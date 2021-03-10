@@ -36,7 +36,7 @@ const Banner: FC<Props> = ({data}) => {
   }
 
   return (
-    <Carousel>
+    <Carousel loop autoplay height={230}>
       {data.map((item: ItemProps) => (
         <View key={item.id}>
           <Item {...item} />
