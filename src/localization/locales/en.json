@@ -26,14 +26,18 @@
       "accumulate_more": "{{value}} points to reach the goal",
       "goal_archive": "goal archive, go to exchange"
     },
-    "upcoming_event": "Imcomming",
-    "online_event": "Newest Online Event",
-    "all": "All",
-    "signup": "Go to Register aaaaaa",
-    "ticket": "Ticket",
-    "no_events": "There is no event comming",
-    "yet_provided": "Event ticket has not yet been provided",
-    "know": "I know",
-    "notice_provided": "For the activities that have been registered, due to the event ticketing establishment work time, they will be provided to members through the system for review seven days before the event! Thank you!"
+    "upcoming_event": {
+      "title": "Imcomming",
+      "signup": "Go to Register",
+      "ticket": "Ticket",
+      "no_events": "There is no event comming",
+      "yet_provided": "Event ticket has not yet been provided",
+      "know": "I understand",
+      "notice_provided": "For the activities that have been registered, due to the event ticketing establishment work time, they will be provided to members through the system for review seven days before the event! Thank you!"
+    },
+    "online_event": {
+      "title": "Newest Online Event",
+      "all": "All"
+    }
   }
 }

@@ -12,7 +12,6 @@ interface Props {
 }
 
 const UpComingEvent: FC<Props> = ({item, onDialog}) => {
-  item = undefined;
   const renderImage = () => (
     <View br20 style={styles.view} center>
       {item && item.image ? (
@@ -47,19 +46,25 @@ const UpComingEvent: FC<Props> = ({item, onDialog}) => {
           </View>
         </>
       ) : (
-        <Text color={Colors.greyNightRider}>{i18n.t('home.no_events')}</Text>
+        <Text color={Colors.greyNightRider}>
+          {i18n.t('home.upcoming_event.no_events')}
+        </Text>
       )}
     </View>
   );
 
   return (
-    <CardDefault title={i18n.t('home.upcoming_event')}>
+    <CardDefault title={i18n.t('home.upcoming_event.title')}>
       <View row br40 marginV-25 marginH-20 centerV spread>
         {renderImage()}
         {renderEvent()}
         <Button
           size={Button.sizes.small}
-          label={item ? i18n.t('home.ticket') : i18n.t('home.signup')}
+          label={
+            item
+              ? i18n.t('home.upcoming_event.ticket')
+              : i18n.t('home.upcoming_event.signup')
+          }
           backgroundColor={Colors.readAlizarin}
           fs14
           onPress={onDialog}

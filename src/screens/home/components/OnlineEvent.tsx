@@ -48,9 +48,9 @@ const Cell: FC<CellProps> = ({data, index, onDisplay}) => (
 const OnlineEvent: FC<Props> = ({onDisplay}) => {
   const CustomButton = () => {
     return (
-      <Button link onPress={onDisplay}>
+      <Button link>
         <Text color={Colors.orangeCarrot} marginR-10>
-          {i18n.t('home.all')}
+          {i18n.t('home.online_event.all')}
         </Text>
         <FontAwesome
           name="chevron-right"
@@ -63,7 +63,7 @@ const OnlineEvent: FC<Props> = ({onDisplay}) => {
 
   return (
     <CardDefault
-      title={i18n.t('home.online_event')}
+      title={i18n.t('home.online_event.title')}
       titleColor={Colors.greyNightRider}
       button={<CustomButton />}>
       <View marginH-20 marginV-10>
