@@ -105,7 +105,6 @@ const CapGuide: FC<Props> = ({isVisiable, onDialog}) => (
 
 const styles = StyleSheet.create({
   container: {
-    // marginTop: Metrics.screen.height / 3 - 150,
     minHeight: 500,
   },
   chartWrapper: {
@@ -137,7 +136,6 @@ const styles = StyleSheet.create({
     zIndex: 90,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'orange',
   },
   topGuideWrapper: {
     flexDirection: 'row',
