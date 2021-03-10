@@ -1,16 +1,31 @@
 {
   "navigation": {
     "home": "Home",
-    "history": "History",
-    "favorite": "Favorite",
-    "notification": "Notification",
-    "profile": "Profile"
+    "history": "Learning History",
+    "favorite": "My Favorite",
+    "notification": "Notice",
+    "profile": "My Page"
   },
   "home": {
-    "point": "Point",
-    "accumulation": "Start accumulating learning points and redeem exquisite gifts",
-    "accumulate_more": "You can redeem delicate gifts when you reach the remaining {{value}} points",
-    "reached_points": "Enough learning points, redeem gifts",
+    "scrollable_buttons_bar": {
+      "cap": "CAP",
+      "telephone_english": "Telephone English",
+      "face_call": "Face",
+      "event": "Event",
+      "on-line_event": "ON-Line Event",
+      "wfc_library": "WFC Library",
+      "parent_work_shop": "Parent Work Shop",
+      "mom_dad_video": "Mom&Dad Video",
+      "points": "Points",
+      "director_video": "Director Video",
+      "new_hand": "New hand"
+    },
+    "point_progress": {
+      "learning_points": "Learning Points",
+      "start_accumulate": "Please start to accumulate Points",
+      "accumulate_more": "{{value}} points to reach the goal",
+      "goal_archive": "goal archive, go to exchange"
+    },
     "upcoming_event": "Imcomming",
     "online_event": "Newest Online Event",
     "all": "All",
