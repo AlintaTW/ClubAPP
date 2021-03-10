@@ -56,7 +56,8 @@
       "total_cap_jobs": "CAP作業總數",
       "total_completed_cap_jobs": "已完成CAP作業總數",
       "understood": "暸解了",
-      "yellow": "黃色"
+      "yellow": "黃色",
+      "birthday": "{{year}} 歲 {{month}} 個月"
     }
   }
 }
