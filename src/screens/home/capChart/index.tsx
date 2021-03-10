@@ -18,7 +18,7 @@ interface ItemProps {
 }
 
 const Item: FC<ItemProps> = (item) => (
-  <Card marginH-20 padding-20 marginT-10 enableShadow={false}>
+  <Card marginH-16 padding-20 marginT-10 enableShadow={false}>
     <View row>
       <View flex row>
         <Avatar size={70} source={item?.photoUrl} />
@@ -53,7 +53,7 @@ const CapChart: FC<Props> = ({data}) => {
 
   const onDialog = React.useCallback(() => {
     setVisiable(!isVisiable);
-  }, [isVisiable]);
+  }, [isVisiable, setVisiable]);
   return (
     <View>
       <Carousel height={292} paginationStyle={styles.paginationStyle}>
@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   dateOfBirth: {
     color: Colors.black,
     opacity: 0.38,
+    lineHeight: 16,
   },
   paginationStyle: {
     bottom: 0,

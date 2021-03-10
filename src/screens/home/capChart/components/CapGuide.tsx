@@ -79,7 +79,7 @@ const CapGuide: FC<Props> = ({isVisiable, onDialog}) => (
           <View marginT-75 style={styles.chartWrapper}>
             <Chart item={capDataForHelp} />
           </View>
-          <View style={styles.underlinedWrapper}>
+          <View flex style={styles.underlinedWrapper}>
             <GuideLine marginR-5 width={15} height={70} />
             <GuideLine width={15} height={25} />
             <Detail
@@ -124,12 +124,11 @@ const styles = StyleSheet.create({
   },
   button: {
     width: 184,
+    height: 40,
   },
   underlinedWrapper: {
     flexDirection: 'row',
-    position: 'absolute',
-    left: actuatedNormalize(10),
-    top: 290,
+    paddingLeft: actuatedNormalize(9),
   },
   topGuideContainer: {
     position: 'absolute',
@@ -138,6 +137,7 @@ const styles = StyleSheet.create({
     zIndex: 90,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: 'orange',
   },
   topGuideWrapper: {
     flexDirection: 'row',
@@ -168,12 +168,12 @@ const styles = StyleSheet.create({
   },
   detailOne: {
     position: 'absolute',
-    left: 15,
+    left: 20,
     top: 25,
   },
   detailTwo: {
     position: 'absolute',
-    left: -2,
+    left: 0,
     top: 65,
   },
   detailWithCap: {

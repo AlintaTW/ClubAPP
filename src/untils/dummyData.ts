@@ -94,8 +94,8 @@ export const capData = {
     },
     {
       childNo: 2,
-      name: '林爰希',
-      birthday: '2012/06/24',
+      name: 'Linda',
+      birthday: '2015/06/12',
       photoUrl: Images.dummy.avatar,
       capFinishedOfThisMonth: 0,
       capRest: 4,
