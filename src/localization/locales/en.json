@@ -38,6 +38,25 @@
     "online_event": {
       "title": "Newest Online Event",
       "all": "All"
+    },
+    "cap_chart": {
+      "applied_this_month": "Applied this month",
+      "blue": "Blue",
+      "cap_chart": "ＣＡＰchart",
+      "cap_chart_no_space": "CAＰchart",
+      "cap_not_reached": "CAP has not yet reached the standard",
+      "cap_reached": "CAP has reached the standard",
+      "dark_blue": "Dark blue",
+      "graduation": "Graduation",
+      "green": "Green",
+      "i_know": "I know",
+      "ligt_green": "Light green",
+      "remaining": "Remaining",
+      "times": " times",
+      "total_cap_jobs": "Total number of CAP jobs",
+      "total_completed_cap_jobs": "Total number of completed CAP jobs",
+      "understood": "Understood",
+      "yellow": "Yellow"
     }
   }
 }

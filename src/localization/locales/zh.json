@@ -38,6 +38,25 @@
     "online_event": {
       "title": "最新 Online Event",
       "all": "全部"
+    },
+    "cap_chart": {
+      "applied_this_month": "本月已申請 ",
+      "blue": "藍色",
+      "cap_chart": "ＣＡＰ圖表",
+      "cap_chart_no_space": "CAＰ圖表",
+      "cap_not_reached": "CAP尚未達標",
+      "cap_reached":"CAP已經達標",
+      "dark_blue": "深藍",
+      "graduation": "畢業",
+      "green": "綠色",
+      "i_know": "我知道了",
+      "light_green": "淺綠",
+      "remaining": "剩餘 ",
+      "times": " 次",
+      "total_cap_jobs": "CAP作業總數",
+      "total_completed_cap_jobs": "已完成CAP作業總數",
+      "understood": "暸解了",
+      "yellow": "黃色"
     }
   }
 }

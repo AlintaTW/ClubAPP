@@ -3,6 +3,8 @@ import {Text, View} from 'react-native-ui-lib';
 import {StyleProp, StyleSheet, ViewStyle} from 'react-native';
 import {Colors} from '@src/assets';
 import {Metrics, Svgs} from '@src/assets';
+import {actuatedNormalize} from '@src/untils/viewScale';
+import i18n from '@src/localization';
 
 interface Props {
   activeColor?: string;
@@ -58,7 +60,7 @@ const Chart: React.FC<Props> = ({
         <View style={styles.triangle} />
         <View style={[styles.actual, activeStyle]} />
       </View>
-      <Text marginT-5 style={[styles.chartLabel, activeText]}>
+      <Text numberOfLines={1} marginT-5 style={[styles.chartLabel, activeText]}>
         {label}
       </Text>
       <Text
@@ -117,7 +119,7 @@ const CapChart: React.FC<Chart> = ({item}) => {
             }
           />
         }
-        label={'藍色'}
+        label={i18n.t('home.cap_chart.blue')}
         percent={item?.c01[0]?.itemFinishedByPercent}
         style={style1}
         subItemFInished={item?.c01[0]?.subItemFInished}
@@ -131,7 +133,7 @@ const CapChart: React.FC<Chart> = ({item}) => {
             fill={item?.c02[0]?.finished ? Colors.blueDark : Colors.blueDark10}
           />
         }
-        label={'深藍'}
+        label={i18n.t('home.cap_chart.dark_blue')}
         percent={item?.c02[0]?.itemFinishedByPercent}
         style={style2}
         subItemFInished={item?.c02[0]?.subItemFInished}
@@ -147,7 +149,7 @@ const CapChart: React.FC<Chart> = ({item}) => {
             }
           />
         }
-        label={'綠色'}
+        label={i18n.t('home.cap_chart.green')}
         percent={item?.c03[0]?.itemFinishedByPercent}
         style={style3}
         subItemFInished={item?.c03[0]?.subItemFInished}
@@ -163,7 +165,7 @@ const CapChart: React.FC<Chart> = ({item}) => {
             }
           />
         }
-        label={'淺綠'}
+        label={i18n.t('home.cap_chart.light_green')}
         percent={item?.c04[0]?.itemFinishedByPercent}
         style={style4}
         subItemFInished={item?.c04[0]?.subItemFInished}
@@ -181,7 +183,7 @@ const CapChart: React.FC<Chart> = ({item}) => {
             }
           />
         }
-        label={'黃色'}
+        label={i18n.t('home.cap_chart.yellow')}
         percent={item?.c05[0]?.itemFinishedByPercent}
         style={style5}
         subItemFInished={item?.c05[0]?.subItemFInished}
@@ -199,7 +201,7 @@ const CapChart: React.FC<Chart> = ({item}) => {
             }
           />
         }
-        label={'畢業'}
+        label={i18n.t('home.cap_chart.graduation')}
         percent={item?.dwe[0]?.itemFinishedByPercent}
         style={style6}
         subItemFInished={item?.dwe[0]?.subItemFInished}
@@ -233,14 +235,14 @@ const styles = StyleSheet.create({
     width: chartWidth,
   },
   chartInfo: {
-    fontSize: 14,
+    fontSize: actuatedNormalize(14),
     textAlign: 'center',
   },
   iconCap: {
     alignSelf: 'center',
   },
   chartLabel: {
-    fontSize: 14,
+    fontSize: actuatedNormalize(14),
     textAlign: 'center',
   },
   triangle: {
