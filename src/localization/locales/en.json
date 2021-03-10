@@ -56,7 +56,8 @@
       "total_cap_jobs": "Total number of CAP jobs",
       "total_completed_cap_jobs": "Total number of completed CAP jobs",
       "understood": "Understood",
-      "yellow": "Yellow"
+      "yellow": "Yellow",
+      "birthday": "{{year}} year {{month}} month"
     }
   }
 }

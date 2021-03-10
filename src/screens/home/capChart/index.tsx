@@ -8,6 +8,8 @@ import CapGuide from './components/CapGuide';
 import {actuatedNormalize} from '@src/untils/viewScale';
 import {Carousel} from '@src/screens/components';
 import i18n from '@src/localization';
+import {getAge} from '@src/untils/dateUntils';
+
 interface Props {
   data: any;
 }
@@ -17,36 +19,42 @@ interface ItemProps {
   title: string;
 }
 
-const Item: FC<ItemProps> = (item) => (
-  <Card marginH-16 padding-20 marginT-10 enableShadow={false}>
-    <View row>
-      <View flex row>
-        <Avatar size={70} source={item?.photoUrl} />
-        <View marginH-15>
-          <Text fs22 style={styles.textName} fw7>
-            {item?.name}
+const Item: FC<ItemProps> = (item) => {
+  const {year, month} = getAge(item.birthday);
+
+  return (
+    <Card marginH-16 padding-20 marginT-10 enableShadow={false}>
+      <View row>
+        <View flex row>
+          <Avatar size={70} source={item?.photoUrl} />
+          <View marginH-15>
+            <Text fs22 style={styles.textName} fw7>
+              {item?.name}
+            </Text>
+            <Text fs10 fw4 style={styles.dateOfBirth}>
+              {i18n.t('home.cap_chart.birthday', {year, month})}
+            </Text>
+          </View>
+        </View>
+        <View style={styles.capStatus}>
+          <Text style={styles.statisticText}>
+            {i18n.t('home.cap_chart.applied_this_month')}
+            <Text color={Colors.orangeCarrot}>
+              {item.capFinishedOfThisMonth}
+            </Text>
+            {i18n.t('home.cap_chart.times')}
           </Text>
-          <Text fs10 fw4 style={styles.dateOfBirth}>
-            {item.birthday}
+          <Text style={styles.statisticText}>
+            {i18n.t('home.cap_chart.remaining')}
+            <Text color={Colors.orangeCarrot}>{item.capRest}</Text>
+            {i18n.t('home.cap_chart.times')}
           </Text>
         </View>
       </View>
-      <View style={styles.capStatus}>
-        <Text style={styles.statisticText}>
-          {i18n.t('home.cap_chart.applied_this_month')}
-          <Text color={Colors.orangeCarrot}>{item.capFinishedOfThisMonth}</Text>
-          {i18n.t('home.cap_chart.times')}
-        </Text>
-        <Text style={styles.statisticText}>
-          {i18n.t('home.cap_chart.remaining')}
-          <Text color={Colors.orangeCarrot}>{item.capRest}</Text>
-          {i18n.t('home.cap_chart.times')}
-        </Text>
-      </View>
-    </View>
-    <Chart item={item} />
-  </Card>
-);
+      <Chart item={item} />
+    </Card>
+  );
+};
 
 const CapChart: FC<Props> = ({data}) => {
   const [isVisiable, setVisiable] = React.useState(false);
