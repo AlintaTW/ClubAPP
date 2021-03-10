@@ -35,11 +35,13 @@ const Item: FC<ItemProps> = ({icon, name, detail}) => {
       style={styles.containerItem}
       activeOpacity={1}
       onPress={onNavToDetail}>
-      <View style={styles.item}>
+      <View br30 center style={styles.item}>
         <Image source={icon} />
       </View>
       <View style={styles.space} />
-      <Text style={styles.textName}>{name}</Text>
+      <Text center fs14 color={Colors.orangeCarrot}>
+        {name}
+      </Text>
     </TouchableOpacity>
   );
 };
@@ -63,28 +65,20 @@ const ScrollableButtonsBar = () => (
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50,
+    marginTop: 40,
   },
   containerItem: {
     marginHorizontal: 10,
-    height: 100,
+    height: 109,
     width: 60,
     display: 'flex',
     justifyContent: 'center',
   },
   item: {
-    alignItems: 'center',
     backgroundColor: Colors.white,
-    borderRadius: 30,
     display: 'flex',
     height: 60,
-    justifyContent: 'center',
     width: 60,
-  },
-  textName: {
-    textAlign: 'center',
-    color: Colors.orangeCarrot,
-    fontSize: 12,
   },
   space: {
     flex: 1,

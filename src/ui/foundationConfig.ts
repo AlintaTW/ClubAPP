@@ -16,6 +16,12 @@ Typography.loadTypographies({
   bold: {
     fontWeight: 'bold',
   },
+  fs44: {
+    fontSize: actuatedNormalize(44),
+  },
+  fs40: {
+    fontSize: actuatedNormalize(40),
+  },
   fs24: {
     fontSize: actuatedNormalize(24),
   },
@@ -45,6 +51,9 @@ Typography.loadTypographies({
   },
   fs10: {
     fontSize: actuatedNormalize(10),
+  },
+  fs8: {
+    fontSize: actuatedNormalize(8),
   },
   fw9: {
     fontWeight: Platform.OS === 'ios' ? '900' : 'bold',

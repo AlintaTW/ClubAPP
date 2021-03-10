@@ -1,5 +1,6 @@
 import React, {FC, memo, useMemo} from 'react';
-import {View, StyleSheet, ImageBackground, Text} from 'react-native';
+import {StyleSheet, ImageBackground} from 'react-native';
+import {View, Text} from 'react-native-ui-lib';
 import LinearGradient from 'react-native-linear-gradient';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -60,24 +61,31 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
   ]);
 
   return (
-    <CardDefault>
-      <View style={styles.container}>
+    <CardDefault marginV-0 marginT-40>
+      <View centerH style={styles.container}>
         <ImageBackground source={Icons.home.star} style={styles.point}>
-          <Text style={styles.textPointNumber}>{points}</Text>
-          <Text style={styles.textPoint}>{i18n.t('home.point')}</Text>
+          <Text center fs40 style={styles.textPointNumber}>
+            {points}
+          </Text>
+          <Text center fs14 color={Colors.black} style={styles.textPoint}>
+            {i18n.t('home.point')}
+          </Text>
         </ImageBackground>
-        <View style={styles.containerProgress}>
+        <View centerV marginR-25 style={styles.containerProgress}>
           <View
             style={[
               styles.containerTitle,
               isPoint0 ? {} : styles.containerTitleRight,
             ]}>
             <View
+              br10
+              paddingH-10
+              paddingV-5
               style={[
                 styles.titleView,
                 isReachedPoints ? {backgroundColor: Colors.readAlizarin} : {},
               ]}>
-              <Text style={styles.title}>
+              <Text fs10 style={styles.title}>
                 {accumulateMoreValue
                   ? accumulateMoreValue === 0
                     ? i18n.t('home.reached_points')
@@ -118,13 +126,13 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
                 valueStart === 0 ? styles.dotViewStart0 : styles.dotViewStart
               }>
               <View style={styles.dot} />
-              <Text style={[styles.textValue, styles.textStart]}>
+              <Text fs12 fw7 style={[styles.textValue, styles.textStart]}>
                 {valueStart}
               </Text>
             </View>
             <View style={styles.dotViewEnd}>
               <View style={styles.dotEnd} />
-              <Text style={[styles.textValue, styles.textEnd]}>
+              <Text fs12 fw7 style={[styles.textValue, styles.textEnd]}>
                 {limitPoints}
               </Text>
             </View>
@@ -137,7 +145,6 @@ const PointProgress: FC<Props> = ({points, limitPoints}) => {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
     backgroundColor: Colors.white,
     borderRadius: 15,
     display: 'flex',
@@ -152,9 +159,6 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
   },
   titleView: {
-    paddingVertical: 5,
-    paddingHorizontal: 10,
-    borderRadius: 10,
     backgroundColor: Colors.orangeCarrot,
     marginLeft: -15,
     marginRight: -10,
@@ -168,32 +172,18 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   textPoint: {
-    color: Colors.black,
-    fontSize: 14,
     opacity: 0.38,
-    textAlign: 'center',
     paddingBottom: 7,
   },
   textPointNumber: {
     color: Colors.orangeCarrot,
-    fontSize: 40,
     fontWeight: '700',
-    textAlign: 'center',
     marginBottom: 5,
   },
   containerProgress: {
     display: 'flex',
     height: 95,
-    justifyContent: 'center',
-    marginRight: 25,
     maxWidth: Metrics.screen.width - 180,
-  },
-  start0: {
-    transform: [{rotate: '180deg'}],
-    color: Colors.orangeCarrot,
-    fontSize: 8,
-    marginRight: Metrics.screen.width - 185,
-    marginLeft: -3,
   },
   start: {
     transform: [{rotate: '180deg'}],
@@ -206,7 +196,7 @@ const styles = StyleSheet.create({
     transform: [{rotate: '180deg'}],
     color: Colors.orangeCarrot,
     fontSize: 8,
-    marginRight: 7,
+    marginRight: 6.5,
   },
   progressBar: {
     height: 5,
@@ -226,12 +216,10 @@ const styles = StyleSheet.create({
     fontSize: 30,
     opacity: 0.5,
     position: 'absolute',
-    right: -4,
+    right: -4.5,
     zIndex: 1,
   },
   textValue: {
-    fontSize: 12,
-    fontWeight: '700',
     color: Colors.black,
   },
   textStart: {
@@ -265,7 +253,7 @@ const styles = StyleSheet.create({
     width: 50,
     display: 'flex',
     alignItems: 'center',
-    marginRight: -14,
+    marginRight: -14.5,
   },
   dotViewStart0: {
     marginLeft: -24,
@@ -281,7 +269,6 @@ const styles = StyleSheet.create({
   },
   title: {
     color: Colors.white,
-    fontSize: 10,
   },
 });
 

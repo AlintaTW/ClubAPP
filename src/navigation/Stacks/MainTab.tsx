@@ -13,6 +13,7 @@ import {
 import {HomeScreen} from '@src/screens';
 import i18n from '@src/localization';
 import HomeStack from './HomeStack';
+import {actuatedNormalize} from '@src/untils/viewScale';
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +42,7 @@ const MainTab = () => (
       inactiveTintColor: Colors.greyDrank,
       labelStyle: {
         paddingBottom: 5,
-        fontSize: 13,
+        fontSize: actuatedNormalize(11),
       },
     }}>
     <Tab.Screen
@@ -141,7 +142,7 @@ const styles = StyleSheet.create({
   tabIcon: {
     backgroundColor: Colors.white,
     position: 'absolute',
-    height: Platform.OS === 'ios' ? 45 : 42,
+    height: Platform.OS === 'ios' ? 46 : 45,
     width: 60,
     bottom: 0,
   },

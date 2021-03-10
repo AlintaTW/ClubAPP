@@ -1,13 +1,9 @@
 import React, {FC, memo} from 'react';
-import {
-  ImageBackground,
-  ImageSourcePropType,
-  StyleSheet,
-  Text,
-} from 'react-native';
-import {Carousel} from 'react-native-ui-lib';
+import {ImageBackground, ImageSourcePropType, StyleSheet} from 'react-native';
+import {View, Text} from 'react-native-ui-lib';
 
 import {Colors, Metrics} from '@src/assets';
+import {Carousel} from '@src/screens/components';
 
 interface Props {
   data: Array<{
@@ -18,6 +14,7 @@ interface Props {
 }
 
 interface ItemProps {
+  id: string;
   banner: ImageSourcePropType;
   title: string;
 }
@@ -27,43 +24,32 @@ const Item: FC<ItemProps> = ({banner, title}) => (
     source={banner}
     style={styles.imageBackground}
     resizeMode="cover">
-    <Text style={styles.textTilte}>{title}</Text>
+    <Text fs44 fw7 marginL-20 style={styles.textTilte}>
+      {title}
+    </Text>
   </ImageBackground>
 );
 
-const Banner: FC<Props> = ({data}) => (
-  <Carousel
-    autoplay
-    loop
-    pageControlProps={{
-      size: 10,
-      inactiveColor: Colors.white,
-      color: Colors.orangeCarrot,
-      containerStyle: styles.containerStyle,
-    }}
-    pageControlPosition={Carousel.pageControlPositions.OVER}>
-    {data.map((props) => (
-      <Item key={props.id} {...props} />
-    ))}
-  </Carousel>
-);
+const Banner: FC<Props> = ({data}) => {
+  if (!data || data.length === 0) {
+    return null;
+  }
+
+  return (
+    <Carousel>
+      {data.map((item: ItemProps) => (
+        <View key={item.id}>
+          <Item {...item} />
+        </View>
+      ))}
+    </Carousel>
+  );
+};
 
 const styles = StyleSheet.create({
-  containerStyle: {
-    position: 'absolute',
-    bottom: -20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    display: 'flex',
-    flex: 1,
-    width: '100%',
-  },
   textTilte: {
-    fontSize: 44,
     color: Colors.white,
-    maxWidth: Metrics.screen.width / 2 - 30,
-    marginLeft: 20,
-    fontWeight: 'bold',
+    maxWidth: Metrics.screen.width / 2 - 20,
     zIndex: 1,
   },
   imageBackground: {

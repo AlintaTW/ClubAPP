@@ -33,7 +33,7 @@ const Home: FC<Props> = () => {
       barStyle="light-content"
       backgroundBody={Colors.yellowHalfDutchWhite}>
       <ScrollView style={styles.container}>
-        <Banner data={headerDatas} />
+        {headerDatas.length > 0 && <Banner data={headerDatas} />}
         <ScrollableButtonsBar />
         <PointProgress
           points={capData.points}
