@@ -19,7 +19,12 @@ const CardDefault: FC<Props> = ({
   <View paddingH-16 marginV-10 {...style}>
     <View row spread>
       {title && (
-        <Text style={styles.title} marginL-20 marginV-15 color={titleColor}>
+        <Text
+          style={styles.title}
+          marginL-20
+          marginV-15
+          color={titleColor}
+          fs20>
           {title}
         </Text>
       )}
@@ -30,7 +35,7 @@ const CardDefault: FC<Props> = ({
 );
 
 const styles = StyleSheet.create({
-  title: {fontSize: 20, fontWeight: 'bold'},
+  title: {fontWeight: 'bold'},
 });
 
 export default memo<Props>(CardDefault);

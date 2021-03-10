@@ -1,23 +1,18 @@
 import React, {FC, memo} from 'react';
-import {Image, StyleSheet, ImageSourcePropType} from 'react-native';
+import {Image, StyleSheet} from 'react-native';
 import {View, Text, Button} from 'react-native-ui-lib';
 
 import {Colors, Images} from '@src/assets';
 import {CardDefault} from '@src/screens/components';
+import i18n from '@src/localization';
 
 interface Props {
-  item: {
-    id: string;
-    name: string;
-    time: string;
-    image: ImageSourcePropType;
-    aduslts: number;
-    children: number;
-  };
+  item: any;
   onDialog: () => void;
 }
 
 const UpComingEvent: FC<Props> = ({item, onDialog}) => {
+  item = undefined;
   const renderImage = () => (
     <View br20 style={styles.view} center>
       {item && item.image ? (
@@ -34,39 +29,41 @@ const UpComingEvent: FC<Props> = ({item, onDialog}) => {
         <>
           <Text
             color={Colors.greyNightRider}
-            style={[styles.space, styles.bold]}>
+            style={[styles.space, styles.bold]}
+            fs14>
             {item.name}
           </Text>
-          <Text color={Colors.orangeCarrot} style={styles.space}>
+          <Text color={Colors.orangeCarrot} style={styles.space} fs14>
             {item.time}
           </Text>
           <View row centerV>
-            <Text color={Colors.greyNightRider} style={styles.space}>
+            <Text color={Colors.greyNightRider} style={styles.space} fs14>
               {`大人 ${item.aduslts} 位 `}
             </Text>
             <View br10 backgroundColor={Colors.black} height={5} width={5} />
-            <Text color={Colors.greyNightRider} style={styles.space}>
+            <Text color={Colors.greyNightRider} style={styles.space} fs14>
               {` 小孩 ${item.children} 位`}
             </Text>
           </View>
         </>
       ) : (
-        <Text color={Colors.greyNightRider}>尚無即將到來的活動</Text>
+        <Text color={Colors.greyNightRider}>{i18n.t('home.no_events')}</Text>
       )}
     </View>
   );
 
   return (
-    <CardDefault marginT-15 title="即將到來活動">
+    <CardDefault title={i18n.t('home.upcoming_event')}>
       <View row br40 marginV-25 marginH-20 centerV spread>
         {renderImage()}
         {renderEvent()}
         <Button
           size={Button.sizes.small}
-          label="電子票"
+          label={item ? i18n.t('home.ticket') : i18n.t('home.signup')}
           backgroundColor={Colors.readAlizarin}
-          labelStyle={styles.labelButton}
+          fs14
           onPress={onDialog}
+          style={styles.button}
         />
       </View>
       <Image
@@ -114,9 +111,9 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
   },
-  space: {lineHeight: 20, fontSize: 14},
-  labelButton: {fontSize: 14},
+  space: {lineHeight: 20},
   bold: {fontWeight: 'bold'},
+  button: {maxWidth: 100},
 });
 
 export default memo<Props>(UpComingEvent);

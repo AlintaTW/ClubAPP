@@ -10,6 +10,15 @@
     "point": "學習點數",
     "accumulation": "開始累積學習點數，兌換精美禮物",
     "accumulate_more": "再{{value}}點就可以兌換精美禮物",
-    "reached_points": "學習點數已足夠，去兌換禮品"
+    "reached_points": "學習點數已足夠，去兌換禮品",
+    "upcoming_event": "即將到來活動",
+    "online_event": "最新 Online Event",
+    "all": "全部",
+    "signup": "報名去",
+    "ticket": "電子票",
+    "no_events": "尚無即將到來的活動",
+    "yet_provided": "活動電子票尚未提供",
+    "know": "我知道了",
+    "notice_provided": "已經報名的活動，由於活動票務建立作業時間，將於活動到來的七天前起，經由系統提供給會員查閱！謝謝！"
   }
 }
