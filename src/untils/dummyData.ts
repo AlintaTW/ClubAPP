@@ -169,25 +169,25 @@ export const onlineEvent = [
   {
     thumnail: Images.common.onlineEvent,
     videoUrl:
-      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+      'https://player.vimeo.com/external/407000582.sd.mp4?s=49d3c020f0880a90fc103c46c1a8550611e98665&profile_id=165',
     title: 'World Family Club Show - ABC',
   },
   {
     thumnail: Images.common.onlineEvent,
     videoUrl:
-      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+      'https://player.vimeo.com/external/407000582.sd.mp4?s=49d3c020f0880a90fc103c46c1a8550611e98665&profile_id=165',
     title: 'World Family Club Show - ABC',
   },
   {
     thumnail: Images.common.onlineEvent,
     videoUrl:
-      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+      'https://player.vimeo.com/external/407000582.sd.mp4?s=49d3c020f0880a90fc103c46c1a8550611e98665&profile_id=165',
     title: 'World Family Club Show - ABC',
   },
   {
     thumnail: Images.common.onlineEvent,
     videoUrl:
-      'https://www.learningcontainer.com/wp-content/uploads/2020/05/sample-mp4-file.mp4?_=1',
+      'https://player.vimeo.com/external/407000582.sd.mp4?s=49d3c020f0880a90fc103c46c1a8550611e98665&profile_id=165',
     title: 'World Family Club Show - ABC',
   },
 ];

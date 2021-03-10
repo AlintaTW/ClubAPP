@@ -6,22 +6,16 @@ import {Colors} from '@src/assets';
 import Banner from './components/Banner';
 import ScrollableButtonsBar from './components/ScrollableButtonsBar';
 import PointProgress from './components/PointProgress';
-import UpComingEvent from './components/UpComingEvent';
-import NoRegister from './components/NoRegister';
 import VideoLayout from './components/VideoLayout';
 import OnlineEvent from './components/OnlineEvent';
-import {event, headerDatas, capData} from '@src/untils/dummyData';
+import UpComingEvent from './upcomingEvent';
+import {headerDatas, capData, event} from '@src/untils/dummyData';
 import CapChart from './capChart';
 
 interface Props {}
 
 const Home: FC<Props> = () => {
-  const [isVisiable, setVisiable] = useState(false);
   const [isVideo, setVideo] = useState(false);
-
-  const onDialog = useCallback(() => {
-    setVisiable(!isVisiable);
-  }, [isVisiable]);
 
   const onVideo = useCallback(() => {
     setVideo(!isVideo);
@@ -40,9 +34,8 @@ const Home: FC<Props> = () => {
           limitPoints={capData.limitPoints}
         />
         <CapChart data={capData.children} />
-        <UpComingEvent item={event[0]} onDialog={onDialog} />
-        <NoRegister isVisiable={isVisiable} onDialog={onDialog} />
-        <OnlineEvent onDisplay={onVideo} />
+        <UpComingEvent data={event[0]} />
+        <OnlineEvent />
         <VideoLayout isVisiable={isVideo} onDisplay={onVideo} />
       </ScrollView>
     </Container>

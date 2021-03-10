@@ -7,14 +7,15 @@ import {StyleSheet} from 'react-native';
 import {onlineEvent} from '@src/untils/dummyData';
 import {Colors} from '@src/assets';
 import {CardDefault} from '@src/screens/components';
+import i18n from '@src/localization';
 
 interface Props {
-  onDisplay: () => void;
+  onDisplay?: () => void;
 }
 interface CellProps {
   data: any;
   index: number;
-  onDisplay: () => void;
+  onDisplay?: () => void;
 }
 
 const Cell: FC<CellProps> = ({data, index, onDisplay}) => (
@@ -35,7 +36,7 @@ const Cell: FC<CellProps> = ({data, index, onDisplay}) => (
           marginL-7
           center
           flex>
-          <Text style={styles.line} color={Colors.greyNightRider}>
+          <Text style={styles.line} color={Colors.greyNightRider} fs16>
             {data.title}
           </Text>
         </View>
@@ -49,7 +50,7 @@ const OnlineEvent: FC<Props> = ({onDisplay}) => {
     return (
       <Button link onPress={onDisplay}>
         <Text color={Colors.orangeCarrot} marginR-10>
-          全部
+          {i18n.t('home.all')}
         </Text>
         <FontAwesome
           name="chevron-right"
@@ -62,7 +63,7 @@ const OnlineEvent: FC<Props> = ({onDisplay}) => {
 
   return (
     <CardDefault
-      title="最新 Online Event"
+      title={i18n.t('home.online_event')}
       titleColor={Colors.greyNightRider}
       button={<CustomButton />}>
       <View marginH-20 marginV-10>
