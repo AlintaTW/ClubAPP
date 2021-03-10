@@ -97,8 +97,8 @@ export const capData = {
       name: 'Linda',
       birthday: '2015/06/12',
       photoUrl: Images.dummy.avatar,
-      capFinishedOfThisMonth: 0,
-      capRest: 4,
+      capFinishedOfThisMonth: 1,
+      capRest: 8,
       graduated: true,
       c01: [
         {
