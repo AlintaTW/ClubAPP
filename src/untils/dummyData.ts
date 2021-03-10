@@ -43,12 +43,75 @@ export const capData = {
           subItemFInished: '13/241',
           totalItem: 13,
           totallSubItem: 241,
-          finished: false,
+          finished: true,
         },
       ],
       c02: [
         {
-          itemFinishedByPercent: 3.5,
+          itemFinishedByPercent: 80,
+          subItemFInished: '14/395',
+          totalItem: 14,
+          totallSubItem: 395,
+          finished: false,
+        },
+      ],
+      c03: [
+        {
+          itemFinishedByPercent: 15,
+          subItemFInished: '13/230',
+          totalItem: 13,
+          totallSubItem: 230,
+          finished: false,
+        },
+      ],
+      c04: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/140',
+          totalItem: 13,
+          totallSubItem: 140,
+          finished: false,
+        },
+      ],
+      c05: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/172',
+          totalItem: 14,
+          totallSubItem: 172,
+          finished: false,
+        },
+      ],
+      dwe: [
+        {
+          itemFinishedByPercent: 0,
+          subItemFInished: '0/8',
+          totalItem: 8,
+          totallSubItem: 8,
+          finished: false,
+        },
+      ],
+    },
+    {
+      childNo: 2,
+      name: '林爰希',
+      birthday: '2012/06/24',
+      photoUrl: Images.dummy.avatar,
+      capFinishedOfThisMonth: 0,
+      capRest: 4,
+      graduated: true,
+      c01: [
+        {
+          itemFinishedByPercent: 100,
+          subItemFInished: '13/241',
+          totalItem: 13,
+          totallSubItem: 241,
+          finished: true,
+        },
+      ],
+      c02: [
+        {
+          itemFinishedByPercent: 50,
           subItemFInished: '14/395',
           totalItem: 14,
           totallSubItem: 395,
@@ -91,6 +154,70 @@ export const capData = {
           finished: false,
         },
       ],
+    },
+  ],
+};
+
+export const capDataForHelp = {
+  childNo: 1,
+  name: '林爰希',
+  birthday: '2012/06/24',
+  photoUrl: Images.dummy.avatar,
+  capFinishedOfThisMonth: 0,
+  capRest: 4,
+  graduated: true,
+  c01: [
+    {
+      itemFinishedByPercent: 100,
+      subItemFInished: '18/95',
+      totalItem: 13,
+      totallSubItem: 241,
+      finished: true,
+    },
+  ],
+  c02: [
+    {
+      itemFinishedByPercent: 100,
+      subItemFInished: '17/102',
+      totalItem: 14,
+      totallSubItem: 395,
+      finished: true,
+    },
+  ],
+  c03: [
+    {
+      itemFinishedByPercent: 35,
+      subItemFInished: '4/56',
+      totalItem: 13,
+      totallSubItem: 230,
+      finished: true,
+    },
+  ],
+  c04: [
+    {
+      itemFinishedByPercent: 15,
+      subItemFInished: '2/85',
+      totalItem: 13,
+      totallSubItem: 140,
+      finished: true,
+    },
+  ],
+  c05: [
+    {
+      itemFinishedByPercent: 0,
+      subItemFInished: '0/35',
+      totalItem: 0,
+      totallSubItem: 172,
+      finished: true,
+    },
+  ],
+  dwe: [
+    {
+      itemFinishedByPercent: 0,
+      subItemFInished: '0/8',
+      totalItem: 0,
+      totallSubItem: 8,
+      finished: true,
     },
   ],
 };
