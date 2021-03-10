@@ -25,14 +25,14 @@ const NoRegister: FC<Props> = ({isVisiable, onDialog}) => (
       <View br40 padding-35 center>
         <View style={styles.content}>
           <Text fs20 bold marginB-20 marginT-10>
-            {i18n.t('home.yet_provided')}
+            {i18n.t('home.upcoming_event.yet_provided')}
           </Text>
           <Text style={styles.textContent} fs14>
-            {i18n.t('home.notice_provided')}
+            {i18n.t('home.upcoming_event.notice_provided')}
           </Text>
         </View>
         <Button
-          label={i18n.t('home.know')}
+          label={i18n.t('home.upcoming_event.know')}
           backgroundColor={Colors.readAlizarin}
           style={styles.button}
           onPress={onDialog}

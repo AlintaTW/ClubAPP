@@ -35,7 +35,7 @@ const Home: FC<Props> = () => {
         />
         <CapChart data={capData.children} />
         <UpComingEvent data={event[0]} />
-        <OnlineEvent />
+        <OnlineEvent onDisplay={onVideo} />
         <VideoLayout isVisiable={isVideo} onDisplay={onVideo} />
       </ScrollView>
     </Container>
